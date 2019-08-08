@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopularCollectionViewCell" id="gTV-IL-0wX" customClass="PopularCollectionViewCell" customModule="BookSearch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="206" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="206" height="60"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oa5-R8-CY4">
+                        <rect key="frame" x="0.0" y="0.0" width="206" height="60"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_gradent_pink" translatesAutoresizingMaskIntoConstraints="NO" id="Cig-6O-rEw">
+                                <rect key="frame" x="0.0" y="0.0" width="206" height="60"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harry Potter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbX-JM-1Cf">
+                                <rect key="frame" x="10" y="10" width="186" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Cig-6O-rEw" firstAttribute="top" secondItem="oa5-R8-CY4" secondAttribute="top" id="0tT-AE-iiz"/>
+                            <constraint firstAttribute="bottom" secondItem="MbX-JM-1Cf" secondAttribute="bottom" constant="10" id="FHx-gC-M6o"/>
+                            <constraint firstAttribute="bottom" secondItem="Cig-6O-rEw" secondAttribute="bottom" id="GHG-mm-jBh"/>
+                            <constraint firstItem="MbX-JM-1Cf" firstAttribute="top" secondItem="oa5-R8-CY4" secondAttribute="top" constant="10" id="Gvv-us-Moe"/>
+                            <constraint firstAttribute="trailing" secondItem="MbX-JM-1Cf" secondAttribute="trailing" constant="10" id="MzJ-Jg-SpI"/>
+                            <constraint firstAttribute="trailing" secondItem="Cig-6O-rEw" secondAttribute="trailing" id="ZEQ-G4-6nI"/>
+                            <constraint firstItem="MbX-JM-1Cf" firstAttribute="leading" secondItem="oa5-R8-CY4" secondAttribute="leading" constant="10" id="gol-jb-cBV"/>
+                            <constraint firstItem="Cig-6O-rEw" firstAttribute="leading" secondItem="oa5-R8-CY4" secondAttribute="leading" id="xpS-IB-ekn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="oa5-R8-CY4" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottom" id="EN8-Z1-kHx"/>
+                <constraint firstItem="oa5-R8-CY4" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailing" id="VH1-MK-Nec"/>
+                <constraint firstAttribute="leading" secondItem="oa5-R8-CY4" secondAttribute="leading" id="eOU-vx-Fi4"/>
+                <constraint firstAttribute="top" secondItem="oa5-R8-CY4" secondAttribute="top" id="md5-mP-HF6"/>
+            </constraints>
+            <size key="customSize" width="206" height="60"/>
+            <connections>
+                <outlet property="cardv" destination="oa5-R8-CY4" id="LdL-b1-HU9"/>
+                <outlet property="imgBg" destination="Cig-6O-rEw" id="ga7-4n-akR"/>
+                <outlet property="titleLbl" destination="MbX-JM-1Cf" id="uyr-8r-GZ7"/>
+            </connections>
+            <point key="canvasLocation" x="166.66666666666669" y="152.00892857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img_gradent_pink" width="1024" height="501"/>
+    </resources>
+</document>
