@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import Hero
 
 class RecentItemTableViewCell: UITableViewCell {
     static let identifier = "RecentItemTableViewCell"
@@ -17,10 +19,18 @@ class RecentItemTableViewCell: UITableViewCell {
     
     var bookItem = BookItem() {
         didSet {
+            if let sUrl = bookItem.generatedImageUrl as? String, bookItem.id != "" {
+                if let url = URL(string: sUrl) {
+                    bookImage.af_setImage(withURL: url)
+                    bookImage.hero.id = bookItem.generatedImageUrl
+                }
+            }
+            
             titleLabel.text = bookItem.volumeInfo.title
             simpleDesc.text = bookItem.volumeInfo.description
         }
     }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

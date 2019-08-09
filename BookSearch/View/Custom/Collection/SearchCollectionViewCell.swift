@@ -21,8 +21,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     //height : 257
     var bookItem = BookItem() {
         didSet {
-            let urlCombination = Constants.IMAGE_BASE_URL + "content?id=\(bookItem.id)&&printsec=frontcover&img=1"
-            if let stringUrl = urlCombination as? String, bookItem.id != "" {
+            if let stringUrl = bookItem.generatedImageUrl as? String, bookItem.id != "" {
                 if let url = URL(string: stringUrl) {
                     bookImg.af_setImage(withURL: url)
                 }

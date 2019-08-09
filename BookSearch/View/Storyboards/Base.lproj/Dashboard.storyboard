@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kPw-r2-1wa">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="dashboardVC" id="Wu0-se-KEo" customClass="DashboardVC" customModule="BookSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eaj-FG-RCx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="pi7-Pk-Quu">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -41,6 +41,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="dashboardTbl" destination="pi7-Pk-Quu" id="U2K-0Q-ity"/>
                         <outlet property="searchBtn" destination="vdZ-e1-bQd" id="YOO-hN-Olj"/>
@@ -50,16 +53,105 @@
             </objects>
             <point key="canvasLocation" x="1026.0869565217392" y="98.4375"/>
         </scene>
+        <!--Book Detail View Controller-->
+        <scene sceneID="nKu-cZ-dmB">
+            <objects>
+                <viewController storyboardIdentifier="bookDetailVC" id="aid-dJ-SEy" customClass="BookDetailViewController" customModule="BookSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eoF-8m-71a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_gradient_blue" translatesAutoresizingMaskIntoConstraints="NO" id="DbU-yG-jck">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DbU-yG-jck" secondAttribute="height" multiplier="1:1" id="xvI-Cg-obJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the book title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOg-gd-1J3">
+                                <rect key="frame" x="20" y="60.666666666666664" width="344" height="27.666666666666664"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxC-6k-2tW">
+                                <rect key="frame" x="20" y="30" width="344" height="20.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMc-7B-7Fo">
+                                <rect key="frame" x="20" y="435.99999999999994" width="374" height="174.33333333333331"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkn-nG-1ug">
+                                <rect key="frame" x="364" y="30" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="H7e-FG-sok"/>
+                                    <constraint firstAttribute="width" secondItem="Xkn-nG-1ug" secondAttribute="height" multiplier="1:1" id="SJV-vU-7qs"/>
+                                </constraints>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeTapped:" destination="aid-dJ-SEy" eventType="touchUpInside" id="HyD-cK-KTc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lxC-6k-2tW" firstAttribute="leading" secondItem="fkp-0E-ryO" secondAttribute="leading" constant="20" id="3zG-Aa-zdO"/>
+                            <constraint firstItem="fkp-0E-ryO" firstAttribute="trailing" secondItem="Xkn-nG-1ug" secondAttribute="trailing" constant="20" id="7OJ-MV-110"/>
+                            <constraint firstItem="UOg-gd-1J3" firstAttribute="top" secondItem="lxC-6k-2tW" secondAttribute="bottom" constant="10" id="DRB-06-xPT"/>
+                            <constraint firstItem="fkp-0E-ryO" firstAttribute="trailing" secondItem="DbU-yG-jck" secondAttribute="trailing" id="Ll8-to-gau"/>
+                            <constraint firstItem="aMc-7B-7Fo" firstAttribute="leading" secondItem="fkp-0E-ryO" secondAttribute="leading" constant="20" id="N7e-Ge-Tdf"/>
+                            <constraint firstItem="fkp-0E-ryO" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aMc-7B-7Fo" secondAttribute="bottom" constant="20" id="QHR-LR-b8T"/>
+                            <constraint firstItem="UOg-gd-1J3" firstAttribute="leading" secondItem="fkp-0E-ryO" secondAttribute="leading" constant="20" id="XaW-aK-uGA"/>
+                            <constraint firstItem="DbU-yG-jck" firstAttribute="top" secondItem="eoF-8m-71a" secondAttribute="top" id="bHP-9g-OEy"/>
+                            <constraint firstItem="fkp-0E-ryO" firstAttribute="trailing" secondItem="aMc-7B-7Fo" secondAttribute="trailing" constant="20" id="cNh-QF-sub"/>
+                            <constraint firstItem="fkp-0E-ryO" firstAttribute="trailing" secondItem="UOg-gd-1J3" secondAttribute="trailing" constant="50" id="cek-1O-FUP"/>
+                            <constraint firstItem="lxC-6k-2tW" firstAttribute="top" secondItem="fkp-0E-ryO" secondAttribute="top" constant="10" id="dgv-on-eQI"/>
+                            <constraint firstItem="Xkn-nG-1ug" firstAttribute="top" secondItem="fkp-0E-ryO" secondAttribute="top" constant="10" id="eWp-DW-Y6S"/>
+                            <constraint firstItem="aMc-7B-7Fo" firstAttribute="top" secondItem="DbU-yG-jck" secondAttribute="bottom" constant="22" id="j2s-IT-SMY"/>
+                            <constraint firstItem="lxC-6k-2tW" firstAttribute="trailing" secondItem="UOg-gd-1J3" secondAttribute="trailing" id="j3C-WU-KZl"/>
+                            <constraint firstItem="DbU-yG-jck" firstAttribute="width" secondItem="eoF-8m-71a" secondAttribute="width" id="ue4-gc-pbQ"/>
+                            <constraint firstItem="DbU-yG-jck" firstAttribute="leading" secondItem="fkp-0E-ryO" secondAttribute="leading" id="yjq-oP-UBb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fkp-0E-ryO"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="closeButton" destination="Xkn-nG-1ug" id="Uef-2i-pV6"/>
+                        <outlet property="descLbl" destination="aMc-7B-7Fo" id="nJ8-Le-umi"/>
+                        <outlet property="imgContainer" destination="DbU-yG-jck" id="d1a-PC-7I3"/>
+                        <outlet property="panGesture" destination="Eld-p0-dKO" id="blz-qq-y9z"/>
+                        <outlet property="titleLbl" destination="UOg-gd-1J3" id="AWV-Fj-BoC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NBF-t9-YV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Eld-p0-dKO">
+                    <connections>
+                        <action selector="handlePanGesture:" destination="aid-dJ-SEy" id="j2c-jq-dEP"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1026" y="763"/>
+        </scene>
         <!--SearchVC-->
         <scene sceneID="U9L-NX-lcp">
             <objects>
                 <viewController storyboardIdentifier="searchVC" id="Mnr-47-hIp" customClass="SearchVC" customModule="BookSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xvf-Hx-Kif">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search Interesting Books" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syO-PF-GDh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="56"/>
                                 <color key="barTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                 <scopeButtonTitles>
@@ -68,7 +160,7 @@
                                 </scopeButtonTitles>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x62-Ry-FiS">
-                                <rect key="frame" x="107" y="353" width="200" height="200"/>
+                                <rect key="frame" x="107" y="278" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="RhA-WA-pTS"/>
@@ -76,7 +168,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yoz-y4-aXa">
-                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <rect key="frame" x="0.0" y="76" width="414" height="660"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="agX-Uz-ag5">
                                     <size key="itemSize" width="50" height="50"/>
@@ -101,6 +193,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mfp-OG-2iP"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="animationContainer" destination="x62-Ry-FiS" id="jAG-oC-N2d"/>
                         <outlet property="srcBar" destination="syO-PF-GDh" id="2Eo-lO-JPo"/>
@@ -117,7 +212,7 @@
                 <navigationController storyboardIdentifier="dashboardNav" automaticallyAdjustsScrollViewInsets="NO" id="kPw-r2-1wa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="qO6-FI-Ijb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -129,6 +224,9 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="Wu0-se-KEo" kind="relationship" relationship="rootViewController" id="1sJ-aA-rFa"/>
                     </connections>
@@ -139,6 +237,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_magnify" width="25" height="25"/>
+        <image name="ic_magnify" width="24" height="24"/>
+        <image name="img_gradient_blue" width="700" height="420"/>
     </resources>
 </document>

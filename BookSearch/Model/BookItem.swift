@@ -11,9 +11,14 @@ import SwiftyJSON
 
 class BookItem {
     var kind = ""
-    var id = ""
+    var id = "" {
+        didSet {
+            generatedImageUrl = Constants.IMAGE_BASE_URL + "content?id=\(id)&&printsec=frontcover&img=1&zoom=5"
+        }
+    }
     var etag = ""
     var selfLink = ""
+    var generatedImageUrl = ""
     var volumeInfo = Volume() 
     
     class func decode(data: JSON) -> BookItem {

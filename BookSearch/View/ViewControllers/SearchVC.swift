@@ -155,6 +155,11 @@ extension SearchVC: UICollectionViewDataSource {
 }
 
 extension SearchVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = StoryboardScene.Dashboard.bookDetailVC.instantiate()
+        vc.book = searchVM.bookList[indexPath.row]
+        present(vc, animated: true)
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding: CGFloat = 3
         let collectionViewWidth = collectionView.frame.size.width - padding

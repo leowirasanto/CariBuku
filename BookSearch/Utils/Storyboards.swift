@@ -17,6 +17,8 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Dashboard.self)
 
+    internal static let bookDetailVC = SceneType<BookSearch.BookDetailViewController>(storyboard: Dashboard.self, identifier: "bookDetailVC")
+
     internal static let dashboardNav = SceneType<UIKit.UINavigationController>(storyboard: Dashboard.self, identifier: "dashboardNav")
 
     internal static let dashboardVC = SceneType<BookSearch.DashboardVC>(storyboard: Dashboard.self, identifier: "dashboardVC")

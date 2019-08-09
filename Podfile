@@ -17,6 +17,7 @@ pod 'SVProgressHUD'
 pod 'SVPullToRefresh'
 pod 'TPKeyboardAvoiding'
 pod 'lottie-ios'
+pod 'Hero'
 pod 'Cosmos', '~> 19.0'
 
 target 'BookSearch'

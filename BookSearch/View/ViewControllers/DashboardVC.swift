@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class DashboardVC: UIViewController {
     @IBOutlet weak var dashboardTbl: UITableView!
@@ -28,7 +29,12 @@ class DashboardVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+   
+    
+    
     @IBAction func searchTapped(_ sender: Any) {
+        
         let vc = StoryboardScene.Dashboard.searchVC.instantiate()
         vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
@@ -122,8 +128,13 @@ extension DashboardVC: UITableViewDelegate {
             print("")
         default:
             guard dashVM.recentBook.isEmpty else {
+                
+                let vc = StoryboardScene.Dashboard.bookDetailVC.instantiate()
+                vc.book = dashVM.recentBook[indexPath.row]
+                present(vc, animated: true)
                 return
             }
+            
             let vc = StoryboardScene.Dashboard.searchVC.instantiate()
             vc.delegate = self
             self.navigationController?.pushViewController(vc, animated: true)
